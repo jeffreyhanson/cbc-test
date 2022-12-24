@@ -1,11 +1,14 @@
 name: bundle binaries
 
 on:
+  push:
+    branches:
+      - main
+      - master
   pull_request:
     branches:
       - main
       - master
-  workflow_dispatch:
 
 jobs:
   build:
@@ -31,4 +34,3 @@ jobs:
           git tag $version
           git push origin master $version
         shell: bash
-
