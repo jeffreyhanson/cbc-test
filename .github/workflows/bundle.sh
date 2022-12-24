@@ -1,6 +1,6 @@
 #/bin/sh
 set -e
-PACKAGE=coinor-cbc
+PACKAGE=coin-or-cbc
 
 # Update
 pacman -Sy
