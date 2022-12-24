@@ -11,8 +11,8 @@ URLS=$(pacman -Sp $pkgs --cache=$OUTPUT)
 VERSION=$(pacman -Si mingw-w64-x86_64-${PACKAGE} | awk '/^Version/{print $3}')
 
 # Set version for next step
-echo "{VERSION}=${VERSION}" >> $GITHUB_OUTPUT
-echo "{PACKAGE}=${PACKAGE}" >> $GITHUB_OUTPUT
+echo "::set-output name=VERSION::${VERSION}"
+echo "::set-output name=PACKAGE::${PACKAGE}"
 echo "Bundling $PACKAGE-$VERSION"
 echo "# $PACKAGE $VERSION" > README.md
 echo "" >> README.md
