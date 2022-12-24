@@ -12,7 +12,7 @@ echo "pkgs: ${pkgs}"
 
 echo "here1111"
 
-pacman -Si $pkgs | grep 'Depends On'
+pacman -Si $pkgs | grep 'Depends On' | grep -o 'mingw-w64-[_.a-z0-9-]*'
 
 echo "here2222"
 
