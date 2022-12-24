@@ -1,6 +1,6 @@
 #/bin/sh
 set -e
-PACKAGE=coin-or-cbc
+PACKAGE=coinor-cbc
 
 # Update
 pacman -Sy
@@ -9,6 +9,8 @@ OUTPUT=$(mktemp -d)
 pkgs=$(echo mingw-w64-{i686,x86_64,ucrt-x86_64}-${PACKAGE})
 
 echo "pkgs: ${pkgs}"
+
+echo "${pacman -Si -verbose}"
 
 deps=$(pacman -Si $pkgs | grep 'Depends On' | grep -o 'mingw-w64-[_.a-z0-9-]*')
 
