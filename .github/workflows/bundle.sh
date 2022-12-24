@@ -29,12 +29,17 @@ done
 # Put into dir structure
 rm -Rf lib lib-8.3.0 lib-4.9.3 include share
 mkdir -p lib lib-8.3.0 include share
-cp -Rf ${OUTPUT}/mingw64/include/ include/
-cp -Rf ${OUTPUT}/mingw64/share/ share/
+cp -Rf ${OUTPUT}/mingw64/include include
+cp -Rf ${OUTPUT}/mingw64/share share
 cp -Rf ${OUTPUT}/mingw64/lib lib-8.3.0/x64
 cp -Rf ${OUTPUT}/mingw32/lib lib-8.3.0/i386
 cp -Rf ${OUTPUT}/ucrt64/lib lib/x64
 cp -Rf lib-8.3.0 lib-4.9.3
+
+
+echo "here1"
+ls -la share
+echo "here2"
 
 # Cleanup
 rm -Rf ${OUTPUT}
