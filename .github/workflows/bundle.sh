@@ -10,7 +10,11 @@ pkgs=$(echo mingw-w64-{i686,x86_64,ucrt-x86_64}-${PACKAGE})
 
 echo "pkgs: ${pkgs}"
 
-pacman -Si -verbose
+echo "here1111"
+
+pacman -Si
+
+echo "here2222"
 
 deps=$(pacman -Si $pkgs | grep 'Depends On' | grep -o 'mingw-w64-[_.a-z0-9-]*')
 
