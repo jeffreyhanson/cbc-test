@@ -12,7 +12,7 @@ echo "pkgs: ${pkgs}"
 
 echo "here1111"
 
-pacman -Si
+pacman pacman -Si $pkgs
 
 echo "here2222"
 
