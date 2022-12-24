@@ -29,6 +29,17 @@ done
 # Put into dir structure
 rm -Rf lib lib-8.3.0 lib-4.9.3 include share
 mkdir -p lib lib-8.3.0 include share
+
+echo "here1"
+ls -la ${OUTPUT}/mingw64
+echo "here2"
+ls -la ${OUTPUT}/mingw64/include
+echo "here3"
+ls -la ${OUTPUT}/mingw64/lib
+echo "here4"
+ls -la ${OUTPUT}/mingw64/share
+echo "here5"
+
 cp -Rf ${OUTPUT}/mingw64/include include/
 cp -Rf ${OUTPUT}/mingw64/share/cbc share/
 cp -Rf ${OUTPUT}/mingw64/lib lib-8.3.0/x64
