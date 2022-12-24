@@ -37,9 +37,5 @@ cp -Rf ${OUTPUT}/ucrt64/lib lib/x64
 cp -Rf lib-8.3.0 lib-4.9.3
 
 
-echo "here1"
-ls -la share
-echo "here2"
-
 # Cleanup
 rm -Rf ${OUTPUT}
