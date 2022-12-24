@@ -7,9 +7,20 @@ pacman -Sy
 OUTPUT=$(mktemp -d)
 
 pkgs=$(echo mingw-w64-{i686,x86_64,ucrt-x86_64}-${PACKAGE})
+
+echo "pkgs: ${pkgs}"
+
 deps=$(pacman -Si $pkgs | grep 'Depends On' | grep -o 'mingw-w64-[_.a-z0-9-]*')
+
+echo "deps: ${deps}"
+
 URLS=$(pacman -Sp $pkgs $deps --cache=$OUTPUT)
+
+echo "URLS: ${URLS}"
+
 VERSION=$(pacman -Si mingw-w64-x86_64-${PACKAGE} | awk '/^Version/{print $3}')
+
+echo "VERSION: ${VERSION}"
 
 # Set version for next step
 echo "::set-output name=VERSION::${VERSION}"
