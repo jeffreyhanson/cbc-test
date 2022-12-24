@@ -12,7 +12,7 @@ echo "pkgs: ${pkgs}"
 
 echo "here1111"
 
-pacman pacman -Si $pkgs
+pacman -Si $pkgs | grep 'Depends On'
 
 echo "here2222"
 
