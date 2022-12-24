@@ -28,16 +28,9 @@ jobs:
         shell: c:\rtools40\usr\bin\bash.exe --login {0}
       - name: Push binaries
         run: |
-          echo "here1"
           version=${{ steps.download.outputs.VERSION }}
-          echo "version = ${version}"
-          echo "here2"
-          git add README.md include lib*
-          echo "here3"
+          git add README.md include share lib*
           git commit -m "Bundle $version ($(date +%F))" || exit 0
-          echo "here4"
           git tag $version
-          echo "here5"
           git push origin master $version
-          echo "here6"
         shell: bash
